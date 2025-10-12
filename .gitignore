@@ -1,0 +1,8 @@
+# ROS2 workspace ignore
+build/
+install/
+log/
+__pycache__/
+*.pyc
+*.egg-info/
+*.zip
