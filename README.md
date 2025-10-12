@@ -27,10 +27,28 @@ This exercise focused on **ROS2 services**:
 
 ## ⚙️ How to Run
 ```bash
-# Source environment
-source /opt/ros/jazzy/setup.bash
-source install/setup.bash
+# Run commands (short)
 
-# Example: run Week 2 server and client
+# 1. Build (once / after changes)
+cd /home/vscode/ros2_ws
+source /home/vscode/ros2_venv/bin/activate
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-select week2_exercise --symlink-install
+
+# 2. Source workspace
+source /home/vscode/ros2_ws/install/week2_exercise/share/week2_exercise/local_setup.bash
+
+# 3. Start server (Terminal 1)
 ros2 run week2_exercise book_server.py
-python3 src/week2_exercise/scripts/book_client.py
+
+# 4. Run client (Terminal 2)
+# from workspace src folder:
+cd /home/vscode/ros2_ws/src/week2_exercise
+source /home/vscode/ros2_venv/bin/activate
+source /opt/ros/jazzy/setup.bash
+source /home/vscode/ros2_ws/install/week2_exercise/share/week2_exercise/local_setup.bash
+python3 -u scripts/book_client.py
+
+# 5. Extended server (optional)
+ros2 launch week2_exercise book_lookup_extended.launch.py
+
