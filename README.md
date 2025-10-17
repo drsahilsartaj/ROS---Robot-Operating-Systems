@@ -29,6 +29,9 @@ This exercise focused on **ROS2 services**:
 ```bash
 # Run commands (short)
 
+# 0. Reopens inside the container
+Cmd + Shift + P --> type and select “Dev Containers: Reopen in Container”
+
 # 1. Build (once / after changes)
 cd /home/vscode/ros2_ws
 source /home/vscode/ros2_venv/bin/activate
